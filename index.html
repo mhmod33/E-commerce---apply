@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassey Commerce</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="icon" href="img/icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    
+    <header>
+        <!-- start of the top header -->
+        <div class="top-header">
+            <div class="container">
+                <!-- logo image -->
+                <a href="#" class="logo"><img src="img/logo2 (2).png" alt=""></a>
+
+                <form action="" class="search-box">
+                    <div class="select-box">
+                        <select id="category" name="category">
+
+                            <option value="All categories">All categories</option>
+                            <option value="Electronics & Digitals">Electronics & Digitals</option>
+                            <option value="Phones & Tablets">Phones & Tablets</option>
+                            <option value="Fashion & Clothings">Fashion & Clothings</option>
+                            <option value="Television & Monitors">Television & Monitors</option>
+                            <option value="Jewelry & Watches">Jewelry & Watches</option>
+                            <option value="Washing Machine">Washing Machine</option>
+                            <option value="Toys & Hobbies">Toys & Hobbies</option>
+                            
+                        </select>
+                        
+                        
+                    </div>
+                    <input type="text" name="search" id="search" placeholder="Search Products" required>
+
+                    <button type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+
+                </form>
+                
+
+
+                <div class="header-icons " style="color: #3679A9;">
+                    <div class="icon">
+                        <a href="#">
+                            <i class="fa-regular fa-heart"></i>
+                            <span class="count count-favourite">0</span>
+                        </a>
+                    </div>
+                    
+                    
+                    <div class="icon">
+                        <a href="#">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="count count-item-header">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of the top header -->
+        
+
+
+        <!-- start of the bottom header -->
+        <div class="bottom-header">
+            <div class="container">
+                <nav class="nav">
+                    <div onclick="categlist()" class="category-nav">
+                        <div class="category-btn">
+                            <i class="fa-solid fa-bars"></i>
+                            <p>Browse category</p>
+                            <i class="fa-solid fa-angle-down"></i>
+                            
+                        </div>
+                        
+                        <div class="category-nav-list">
+                            <a href="">Top 10 Offers</a>
+                            <a href="">Electronics & Digitals</a>
+                            <a href="">Phones & Tablets</a>
+                            <a href="">Fashion & Clothings</a>
+                            <a href="">Television & Monitors</a>
+                            <a href="">Jewelry & Watches</a>
+                            <a href="">Toys & Hobbies</a>
+                        </div>
+                        
+                    </div>
+                    
+                    <ul class="nav-links">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                    
+                </nav>
+
+                <div class="login-signup btns">
+                    <a href="#" class="btn">Login<i class="fa-solid fa-right-to-bracket"></i></a>
+                    <a href="#" class="btn">Sign up<i class="fa-solid fa-user-plus"></i></a>
+                </div>
+                
+            </div>
+        </div>
+        <!-- end of the bottom header -->
+
+    </header>
+
+
+    <div class="slider">
+        <div class="container">
+            <div class="slide-swp mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a></a>
+                        <img src="img/banner-slider1.jpg" alt="">
+                       
+                    </div>
+                    <div class="swiper-slide">
+                        <a></a>
+                        <img src="img/banner-slider2.jpg" alt=""></div>
+                    <div class="swiper-slide">
+                        <a></a>
+                        <img src="img/banner slider 2.jpg" alt="">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+            <div class="banner2">
+                <a><img src="img/sidebanner.jpg" alt=""></a>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="banners4">
+        <div class="container">
+            <div class="box">
+                <a href="" class="linkBtn"></a>
+                <img src="/img/banner3_1.png" alt="">
+                <div class="text">
+                    <h5>Break Disc</h5>
+                    <h5>deals in this</h5>
+                    <div class="sale">
+                        <p>UP <br>To</p>
+                        <span>70%</span>
+                    </div>
+                                            <h6>Shop Now</h6>
+
+                </div>
+            </div>
+            <div class="box">
+                <a href="" class="linkBtn"></a>
+                <img src="/img/banner3_2.png" alt="">
+                <div class="text">
+                    <h5>Break Disc</h5>
+                    <h5>deals in this</h5>
+                    <div class="sale">
+                        <p>UP <br>To</p>
+                        <span>70%</span>
+                    </div>
+                        <h6>Shop Now</h6>
+
+                </div>
+            </div>
+            <div class="box">
+                <a href="" class="linkBtn"></a>
+                <img src="/img/banner3_3.png" alt="">
+                <div class="text">
+                    <h5>Break Disc</h5>
+                    <h5>deals in this</h5>
+                    <div class="sale">
+                        <p>UP <br>To</p>
+                        <span>70%</span>
+                    </div>
+                        <h6>Shop Now</h6>
+
+                </div>
+            </div>
+            <div class="box">
+                <a href="" class="linkBtn"></a>
+                <img src="/img/banner3_4.png" alt="">
+                <div class="text">
+                    <h5>Break Disc</h5>
+                    <h5>deals in this</h5>
+                    <div class="sale">
+                        <p>UP <br>To</p>
+                        <span>70%</span>
+                    </div>
+                        <h6>Shop Now</h6>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
