@@ -27,3 +27,16 @@ var swiper = new Swiper(".slide-product", {
   },
   loop: true,
 });
+
+var swiper = new Swiper(".slide-product", {
+  slidesPerView: 5,
+  spaceBetween: 20,
+  navigation: {
+    nextEl: ".swiper-button-prev",
+    prevEl: ".swiper-button-next",
+  },
+  autoplay: {
+    delay: 2500,
+  },
+  loop: true,
+});

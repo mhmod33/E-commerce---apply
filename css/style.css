@@ -69,6 +69,7 @@ header{
     left: 0;
     right: 0;
     box-shadow: 5px 5px 8px #f0f0f0 ;
+    z-index: 100;
 }
 header .top-header .container{
 display: flex;
@@ -495,3 +496,70 @@ header .bottom-header .nav-links li.active a{
     color: var(--main_color);
 }
 
+.slide{
+    margin-bottom: 70px;  
+}
+
+
+.top-slide{
+    margin-bottom: 20px;
+    position: relative;
+    border-bottom: 3px solid var(--main_color);
+}
+.top-slide h2{
+    position: relative;
+    color: var(--white_color);
+    font-size: 13px;
+    padding: 10px 40px;
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    text-transform: uppercase;
+    background-color: var(--main_color);
+    gap: 10px;
+    align-items: center;
+}
+
+
+.top-slide h2 i{
+    color: var(--white_color);
+}
+.top-slide h2::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    z-index: 1;
+    border-left: 20px solid  transparent;
+    background: var(--white_color);
+    border-bottom: 20px solid #395ac7;
+}   
+.slide .container{
+    position: relative;
+    
+}
+.slide .container .mySwiper{
+    padding: 10px 0;
+}
+.slide .container .mySwiper .btn-Swip{
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background: var(--bg_color);
+    color: var(--color_heading);
+    font-size: 1px;
+    width: 35px;
+    height: 35px;
+    font-weight: bold;
+    border-radius: 5px;
+    
+}   
+.slide .container .mySwiper .btn-Swip::after{
+    font-size: 18px;
+}
+.slide .container .mySwiper .swiper-button-prev{
+    /* left: 94%; */
+    left: calc(100% - 80px);
+}
