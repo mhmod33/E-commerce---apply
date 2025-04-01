@@ -11,6 +11,58 @@
 </head>
 <body>
     
+    <div class="cart">
+        <div class="top-cart">
+            <h3>Cart Items: <span class="count-item-cart">0</span></h3>
+            <span class="close-cart" onclick="showHideCart()"><i class="fa-regular fa-circle-xmark"></i></span>
+        </div>
+
+        <div class="items-cart" id="cart-items">
+
+            <div class="item-cart">
+                <img src="img/product/10.png" alt="">
+                <div class="item-content">
+                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+                    <p class="price-cart" >$80</p>
+                    <div class="quantity-control">
+                        <button class="decrease-quantity">-</button>
+                        <span class="quantity">3</span>
+                        <button class="increase-quantity">+</button>
+                    </div>
+                </div>
+                <button class="delete-item"><i class="fa-solid fa-trash-can"></i></button>
+
+            </div>
+            <div class="item-cart">
+                <img src="img/product/10.png" alt="">
+                <div class="item-content">
+                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+                    <p class="price-cart" >$80</p>
+                    <div class="quantity-control">
+                        <button class="decrease-quantity">-</button>
+                        <span class="quantity">3</span>
+                        <button class="increase-quantity">+</button>
+                    </div>
+                </div>
+                <button class="delete-item"><i class="fa-solid fa-trash-can"></i></button>
+
+            </div>
+            
+        </div>
+
+        <div class="bottom-cart">
+            <div class="total">
+                <p>Subtotal</p>
+                <p class="price-cart-total">$0</p>
+            </div>
+        </div>
+        <div class="button-cart ">
+            <a href="#" class="btn-cart btn">Checkout</a>
+            <span class="btn-cart trans-bg btn" onclick="showHideCart()">Shop more</span>
+        </div>
+    </div>
+
+
     <header>
         <!-- start of the top header -->
         <div class="top-header">
@@ -54,7 +106,7 @@
                     </div>
                     
                     
-                    <div class="icon">
+                    <div class="icon crticon" onclick="showHideCart()">
                         <a href="#">
                             <i class="fa-solid fa-cart-shopping"></i>
                             <span class="count count-item-header">0</span>
@@ -307,7 +359,7 @@
         </div>
     </div>
 
-
+<!-- start footer -->
     <footer>
         <div class="container">
             <div class="bigRow">
@@ -363,6 +415,8 @@
         </div>
     </div>
     </footer>
+<!-- start footer -->
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="/js/swiper.js"></script>
     <script src="js/main.js"></script>
