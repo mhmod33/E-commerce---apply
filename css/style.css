@@ -481,20 +481,19 @@ header .bottom-header .nav-links li.active a{
     padding: 8px;
     font-size: 18px;
     cursor: pointer;
-    transition: 0.4s;
+    transition: 0.4s;   
 }
 .product .icons .btn-add-to-cart:hover{
     background: var(--main_color);
     color: var(--white_color);
     
 }
-.product .icons .btn-add-to-cart.active{
+.product .icons .btn-add-to-cart.Activ{
     color: var(--color_heading);
     background-color: transparent;
+    pointer-events: none;
 }
-.product .icons .btn-add-to-cart.active i{
-    color: var(--main_color);
-}
+
 .slide{
     margin-bottom: 70px;  
 }
@@ -809,7 +808,9 @@ footer .copyrights a:hover{
     gap: 20px;
     margin-top: 15px;
 }
-
+.fa-cart-shopping{
+    pointer-events: none;
+}
 .button-cart .btn-cart{
     background-color: #3679A9;
     color: var(--white_color);

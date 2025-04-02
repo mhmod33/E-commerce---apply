@@ -1,6 +1,8 @@
 fetch("products.json")
   .then((Response) => Response.json())
   .then((data) => {
+    const cartItem = JSON.parse(localStorage.getItem("CartItem")) || [];
+
     let swiperItemsSale = document.getElementById("swiperItemsSale");
     let swiperElectronics = document.getElementById("swiperElectronics");
     let swiperAppliances = document.getElementById("swiperAppliances");
@@ -12,6 +14,9 @@ fetch("products.json")
       );
 
       if (product.old_price) {
+        const isInCart = cartItem.some(
+          (cartItem) => cartItem.id === product.id
+        );
         swiperItemsSale.innerHTML += `
             <div class="swiper-slide product">
                         <span class="sale-present">%${salePercent}</span>
@@ -27,15 +32,19 @@ fetch("products.json")
                             <i class="fa-solid fa-star"></i>
                         </div>
 
-                        <div class="name-product"><a href="">${product.name}</a></div>
+                        <div class="name-product"><a href="">${
+                          product.name
+                        }</a></div>
 
                         <div class="price">
                             <p><span>$${product.price}</span></p>
                             <p class="old-price">$${product.old_price}</p>
                         </div>
                         <div class="icons">
-                            <span class="btn-add-to-cart">
-                                <i class="fa-solid fa-cart-shopping"></i>Add To Cart
+                            <span class="btn-add-to-cart ${isInCart ?'Activ' : ""}"  data-id="${product.id}">
+                                <i class="fa-solid fa-cart-shopping"></i>${
+                                  isInCart ? "Item in cart" : "add to cart"
+                                }
                             </span>
                             <span class="btn-heart">
                                 <i class="fa-regular fa-heart"></i>
@@ -58,6 +67,9 @@ fetch("products.json")
         : "";
 
       if (product.catetory == "electronics") {
+        const isInCart = cartItem.some(
+          (cartItem) => cartItem.id === product.id
+        );
         swiperElectronics.innerHTML += `
             <div class="swiper-slide product">
                         ${old_price_div}
@@ -74,15 +86,19 @@ fetch("products.json")
                             <i class="fa-solid fa-star"></i>
                         </div>
 
-                        <div class="name-product"><a href="">${product.name}</a></div>
+                        <div class="name-product"><a href="">${
+                          product.name
+                        }</a></div>
 
                         <div class="price">
                             <p><span>$${product.price}</span></p>
                             ${old_price_paragraph}
                         </div>
                         <div class="icons">
-                            <span class="btn-add-to-cart">
-                                <i class="fa-solid fa-cart-shopping"></i>Add To Cart
+                             <span class="btn-add-to-cart ${isInCart ?'Activ' : ""}"  data-id="${product.id}">
+                                <i class="fa-solid fa-cart-shopping"></i>${
+                                  isInCart ? "Item in cart" : "add to cart"
+                                }
                             </span>
                             <span class="btn-heart">
                                 <i class="fa-regular fa-heart"></i>
@@ -105,6 +121,9 @@ fetch("products.json")
         : "";
 
       if (product.catetory == "appliances") {
+        const isInCart = cartItem.some(
+          (cartItem) => cartItem.id === product.id
+        );
         swiperAppliances.innerHTML += `
             <div class="swiper-slide product">
                         ${old_price_div}
@@ -121,15 +140,19 @@ fetch("products.json")
                             <i class="fa-solid fa-star"></i>
                         </div>
 
-                        <div class="name-product"><a href="">${product.name}</a></div>
+                        <div class="name-product"><a href="">${
+                          product.name
+                        }</a></div>
 
                         <div class="price">
                             <p><span>$${product.price}</span></p>
                             ${old_price_paragraph}
                         </div>
                         <div class="icons">
-                            <span class="btn-add-to-cart">
-                                <i class="fa-solid fa-cart-shopping"></i>Add To Cart
+                              <span class="btn-add-to-cart ${isInCart ?'Activ' : ""}"  data-id="${product.id}">
+                                <i class="fa-solid fa-cart-shopping"></i>${
+                                  isInCart ? "Item in cart" : "add to cart"
+                                }
                             </span>
                             <span class="btn-heart">
                                 <i class="fa-regular fa-heart"></i>
@@ -152,6 +175,9 @@ fetch("products.json")
         : "";
 
       if (product.catetory == "mobiles") {
+        const isInCart = cartItem.some(
+          (cartItem) => cartItem.id === product.id
+        );
         swiperMobiles.innerHTML += `
             <div class="swiper-slide product">
                         ${old_price_div}
@@ -168,15 +194,19 @@ fetch("products.json")
                             <i class="fa-solid fa-star"></i>
                         </div>
 
-                        <div class="name-product"><a href="">${product.name}</a></div>
+                        <div class="name-product"><a href="">${
+                          product.name
+                        }</a></div>
 
                         <div class="price">
                             <p><span>$${product.price}</span></p>
                             ${old_price_paragraph}
                         </div>
                         <div class="icons">
-                            <span class="btn-add-to-cart">
-                                <i class="fa-solid fa-cart-shopping"></i>Add To Cart
+                            <span class="btn-add-to-cart ${isInCart ?'Activ' : ""}"  data-id="${product.id}">
+                                <i class="fa-solid fa-cart-shopping"></i>${
+                                  isInCart ? "Item in cart" : "add to cart"
+                                }
                             </span>
                             <span class="btn-heart">
                                 <i class="fa-regular fa-heart"></i>
@@ -190,12 +220,13 @@ fetch("products.json")
   });
 
 // cart
-window.onload(() => {
-  let cart = document.querySelector(".cart");
-  cart.style.marginRight = "-350px";
-});
+// window.onload(() => {
+//   let cart = document.querySelector(".cart");
+//   cart.style.marginRight = "-350px";
+// });
 function showHideCart() {
   let cart = document.querySelector(".cart");
   cart.classList.toggle("actv");
 }
 showHideCart();
+// ---------add to cart
