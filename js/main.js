@@ -5,6 +5,14 @@ function categlist() {
   categList.classList.toggle("active");
 }
 
+//   let matchMedia=window.matchMedia("(max-width:1100px)");
+  let navLinks=document.querySelector('.nav-links');
+
+  function toggleNavLinks(){
+    navLinks.classList.toggle ("active");
+  }
+
+
 // *********************************------------------add to cart functions --------------------*********************************
 
 fetch("products.json")
