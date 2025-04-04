@@ -879,14 +879,14 @@ footer .copyrights a:hover{
     /* width: 400px; */
     -webkit-box-orient: vertical;
 }
-.checkout .container .order-summary .item_cart .delete_item{
+.checkout .container .order-summary .item_cart .delete-item{
     font-size: 18px;
     cursor: pointer;
     transition: 0.4s;
     padding: 5px;
     border: 1px solid #999;
 }
-.checkout .container .order-summary .item_cart .delete_item:hover{
+.checkout .container .order-summary .item_cart .delete-item:hover{
     color: var(--sale-color);
     scale: 1.1;
 }
