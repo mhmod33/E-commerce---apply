@@ -58,9 +58,18 @@ function updateCart() {
   const cartItem = JSON.parse(localStorage.getItem("CartItem")) || [];
   const itemsInCart = document.getElementById("cart-items");
 
+  let items_input=document.getElementById("itemsInCheck");
+  let count_ItemsCheck=document.getElementById("countItems");
+  let total_PriceCheck=document.getElementById("totalPrice");
+
   let cartInCheckoutItem = document.getElementById('checkoutItems');
     if(cartInCheckoutItem){ 
-      cartInCheckoutItem.innerHTML = "";  
+      cartInCheckoutItem.innerHTML = ""; 
+      
+      items_input.value="";
+      count_ItemsCheck.value="";
+      total_PriceCheck.value="";
+      
     }
 
   let totalPrice=0;
@@ -103,9 +112,18 @@ function updateCart() {
       totalCheckout.textContent=`$${SubTotalAsNumber+shippingTotalAsNumber}`;
     }
 
-    
+    if(items_input){
+      items_input.value="Name: " +item.name+"----------"+"total price : " + item.price+"--------"+"Number of elements: "+item.quantity+"\n";
+    }
 
-  
+    if(count_ItemsCheck){
+      count_ItemsCheck.value=totalCount;
+    }
+
+    if(total_PriceCheck){
+      total_PriceCheck.value=totalPrice;
+    }
+    
   
     itemsInCart.innerHTML += `
       <div class="item-cart">

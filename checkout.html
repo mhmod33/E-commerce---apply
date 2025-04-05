@@ -141,17 +141,22 @@
     </header>
 
     <section class="checkout">
-        <form action="">
+        <form id="placementData" action="https://script.google.com/macros/s/AKfycbxsD8SMRwRVhUr92b-pFhbcrazac72P4ijqH_V3mt1pCourtR0busGNTFxSj45__5vTZw/exec">
+            
+            <input type="hidden" name="Items" id="itemsInCheck">
+            <input type="hidden" name="count" id="countItems">
+            <input type="hidden" name="Total price" id="totalPrice">
+
+
             <div class="container">
 
             <div class="order-summary">
                 <h1>Order Summary</h1>
 
-             <div class="items" id="checkoutItems">
-              
+            <div class="items" id="checkoutItems">
 
 
-             </div>
+            </div>
 
             <div class="bottom-summary">
                 <div class="shop-table">
@@ -185,23 +190,23 @@
                     <div class="inputs">
                         
                         <label for="email">Email</label>
-                        <input type="email" placeholder="Enter your email" name="email" required>
+                        <input type="email" placeholder="Enter your email" name="Email" required>
                         
                         <label for="">Name</label>
                         <input type="text"placeholder="Enter your name" name="Name" required>
                         
                         <label for="address">Address</label>
-                        <input type="text"placeholder="Enter your address" name="address" required>
+                        <input type="text"placeholder="Enter your address" name="Address" required>
                         
                         <label for="phone">Phone</label>
-                        <input type="text"placeholder="Enter your phone" name="phone" required>
+                        <input type="text"placeholder="Enter your phone" name="Phone" required>
                     </div>
                 </div>
                 <div class="coupon">
                     <div class="inputs">
                         <h1>Coupon Code </h1>
                         <label for="copon">Copoun Code</label>
-                        <input type="text"placeholder="Enter your coupoun code" name="copon" required>
+                        <input type="text"placeholder="Enter your coupoun code" name="copon" >
                     </div>
 
                     <button class="coupon-btn">Apply Coupon</button>
@@ -271,5 +276,6 @@
 
 
 <script src="/js/main.js"></script>
+<script src="/js/submit.js"></script>
 </body>
 </html>
