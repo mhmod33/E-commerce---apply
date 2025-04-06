@@ -768,7 +768,6 @@ footer .copyrights a:hover{
     justify-content: center;
     align-items: center;
 }
-
 .bottom-cart .total{
     display: flex;
     justify-content: space-between;
@@ -793,6 +792,15 @@ footer .copyrights a:hover{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.clearAllBtn{
+    text-decoration: underline;
+    color: #c77203a2;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.clearAllBtn:hover{
+    color: var(--sale-color);
 }
 .button-cart .btn-cart:hover{
     background-color: #2890da;
@@ -876,7 +884,7 @@ footer .copyrights a:hover{
     display: -webkit-box;
     -webkit-line-clamp: 2;
     line-clamp: 4;
-    /* width: 400px; */
+    width: 300px;
     -webkit-box-orient: vertical;
 }
 .checkout .container .order-summary .item_cart .delete-item{
@@ -905,7 +913,6 @@ footer .copyrights a:hover{
     background-color: var(--bg_color);
     padding: 3px 0;
 }
-
 .checkout .container .order-summary .item_cart .quantity_control button{
     width: 27px;
     height: 27px;
@@ -915,13 +922,11 @@ footer .copyrights a:hover{
     cursor: pointer;
     font-size: 20px;
 }
-
 .checkout .container .order-summary .bottom-summary{
     padding-top: 15px;
     border-top: 1px solid #999;
     margin-bottom: 15px;
 }
-
 .checkout .container .order-summary .bottom-summary .shop-table{
     margin-bottom: 20px;
     display: flex;
@@ -929,7 +934,6 @@ footer .copyrights a:hover{
     align-items: center;
     justify-content: space-between;
 }
-
 .checkout .container .order-summary .bottom-summary .shop-table p{
     font-size: 20px;
     color: #3679A9;
@@ -961,7 +965,6 @@ footer .copyrights a:hover{
 .checkout .container .order-summary .bottom-summary  .place-btn:hover{
     background-color: #2890da;
 }
-
 .checkout .container .input_info {
     width: 45%;
     /* height: 750px; */

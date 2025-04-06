@@ -57,6 +57,8 @@ function addToCartFun(product) {
 function updateCart() {
   const cartItem = JSON.parse(localStorage.getItem("CartItem")) || [];
   const itemsInCart = document.getElementById("cart-items");
+  let clearAllBtn=document.querySelector('.clearAllBtn');
+
 
   let items_input=document.getElementById("itemsInCheck");
   let count_ItemsCheck=document.getElementById("countItems");
@@ -125,7 +127,8 @@ function updateCart() {
     }
     
   
-    itemsInCart.innerHTML += `
+   
+      itemsInCart.innerHTML += `
       <div class="item-cart">
                 <img src="${item.img}" alt="">
                 <div class="item-content">
@@ -139,6 +142,9 @@ function updateCart() {
                 </div>
                 <button class="delete-item" data-index=${item.index} ><i class="fa-solid fa-trash-can"></i></button>
       </div>`;
+   
+
+     
 
 
     if(cartInCheckoutItem){ 
@@ -202,8 +208,24 @@ decreaseBtn.forEach(button=>{
     });
   });
 
-}
+  function ClearAll(){
+    let cartItem=JSON.parse(localStorage.getItem("cartItem") )||[];
+    clearAllBtn.addEventListener('click', ()=>{
+      localStorage.clear();
+      localStorage.setItem("cartItem",JSON.stringify(cartItem)); 
+      updateCart();
+      let totalPriceCalc=document.querySelector('.price-cart-total');
+      let countCartItems=document.querySelector('.count-item-cart');
 
+      countCartItems.innerHTML = "0";
+      totalPriceCalc.innerHTML = "$00.00";
+    });
+  }
+
+  ClearAll();
+
+
+}
 
 
 
