@@ -1,7 +1,9 @@
+
 fetch("products.json")
   .then((Response) => Response.json())
   .then((data) => {
     const cartItem = JSON.parse(localStorage.getItem("CartItem")) || [];
+    const wishItem = JSON.parse(localStorage.getItem('wishItem')) ||[];
 
     let swiperItemsSale = document.getElementById("swiperItemsSale");
     let swiperElectronics = document.getElementById("swiperElectronics");
@@ -46,7 +48,7 @@ fetch("products.json")
                                   isInCart ? "Item in cart" : "add to cart"
                                 }
                             </span>
-                            <span class="btn-heart">
+                            <span class="btn-heart" data-id="${product.id}">
                                 <i class="fa-regular fa-heart"></i>
                             </span>
 
@@ -100,7 +102,7 @@ fetch("products.json")
                                   isInCart ? "Item in cart" : "add to cart"
                                 }
                             </span>
-                            <span class="btn-heart">
+                            <span class="btn-heart"   data-id="${product.id}">
                                 <i class="fa-regular fa-heart"></i>
                             </span>
 
@@ -154,7 +156,7 @@ fetch("products.json")
                                   isInCart ? "Item in cart" : "add to cart"
                                 }
                             </span>
-                            <span class="btn-heart">
+                            <span class="btn-heart"   data-id="${product.id}">
                                 <i class="fa-regular fa-heart"></i>
                             </span>
 
@@ -208,7 +210,7 @@ fetch("products.json")
                                   isInCart ? "Item in cart" : "add to cart"
                                 }
                             </span>
-                            <span class="btn-heart">
+                            <span class="btn-heart"   data-id="${product.id}">
                                 <i class="fa-regular fa-heart"></i>
                             </span>
 

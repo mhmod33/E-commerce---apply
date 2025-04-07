@@ -32,11 +32,31 @@
             </div>
         </div>
         <div class="button-cart ">
-            <a href="#" class="btn-cart btn">Checkout</a>
+            <a href="/checkout.html" class="btn-cart btn">Checkout</a>
             <span class="btn-cart trans-bg btn" onclick="showHideCart()">Shop more</span>
         </div>
     </div>
     <!-- end cart -->
+
+
+
+        <!-- start wishlist -->
+        <div class="wishlist act">
+            <div class="top-wishlist">
+                <h3>Wishlist Items: <span class="count-item-wishlist">0</span></h3>
+                <h3 class="clearAllBtn">CLear All</h3>
+                <span class="close-wishlist"  onclick="ViewHideWishList()"><i class="fa-regular fa-circle-xmark"></i></span>
+            </div>
+    
+            <div class="items-wishlist" id="wish-items">
+
+          
+
+
+            </div>
+    
+        </div>
+        <!-- end wishlist -->
 
 
     <!-- start header -->
@@ -73,8 +93,8 @@
 
 
                 <div class="header-icons " style="color: #3679A9;">
-                    <div class="icon">
-                        <a href="#">
+                    <div class="iconHeart">
+                        <a href="#" onclick="ViewHideWishList()">
                             <i class="fa-regular fa-heart"></i>
                             <span class="count count-favourite">0</span>
                         </a>

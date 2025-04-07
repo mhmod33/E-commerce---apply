@@ -57,6 +57,7 @@ function addToCartFun(product) {
 function updateCart() {
   const cartItem = JSON.parse(localStorage.getItem("CartItem")) || [];
   const itemsInCart = document.getElementById("cart-items");
+
   let clearAllBtn=document.querySelector('.clearAllBtn');
 
 
@@ -278,3 +279,69 @@ function DecreaseQuantity(index){
 updateCart();
 
 ////////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////// wishlist /////////////////////////////////
+let wishlist=document.querySelector('.wishlist');
+
+function ViewHideWishList(){
+  wishlist.classList.toggle('act');
+}
+ViewHideWishList();
+
+
+fetch('products.json')
+.then((Response) =>Response.json())
+.then((data) =>{ 
+
+  let allHeartIcons=document.querySelectorAll('.btn-heart');
+
+  allHeartIcons.forEach((button=>{
+    button.addEventListener('click',(event)=>{
+
+      let productId= event.currentTarget.getAttribute("data-id");
+      let selectedItem=data.find((product)=>product.id == productId);
+      addToWish(selectedItem);
+    });
+  }));
+});
+
+function addToWish(product){
+  const wishItem = JSON.parse(localStorage.getItem('wishItem')) ||[];
+  wishItem.push({...product});
+  localStorage.setItem('wishItem',JSON.stringify(wishItem));
+  
+  updateWish()
+}
+
+
+
+
+
+
+function  updateWish(){
+
+  const wishItem = JSON.parse(localStorage.getItem('wishItem')) ||[];
+  let wishItems=document.getElementById('wish-items');
+
+  wishItems.innerHTML ="";
+
+  wishItem.forEach((item,index)=>{
+    wishItems.innerHTML +=`
+                <div class="item-wishlist">
+                    <img src="${item.img}" alt="">
+                    <div class="item-content">
+                        <h4>${item.name}</h4>
+                        <p class="price-wishlist" >$${item.price}</p>
+                        <div class="quantity-control">
+                            <button class="addWishItemToCart" data-index=${item.index}> add to cart</button>
+                        </div>
+                    </div> 
+                    <button class="delete-item" data-index=${index} ><i class="fa-solid fa-close"></i></button>
+                </div>
+    `
+  })
+  
+
+  }  
+  updateWish()
