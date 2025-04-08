@@ -209,11 +209,12 @@ decreaseBtn.forEach(button=>{
     });
   });
 
+
+
   function ClearAll(){
-    let cartItem=JSON.parse(localStorage.getItem("cartItem") )||[];
-    clearAllBtn.addEventListener('click', ()=>{
-      localStorage.clear();
-      localStorage.setItem("cartItem",JSON.stringify(cartItem)); 
+      clearAllBtn.addEventListener('click', ()=>{
+      localStorage.removeItem('CartItem');
+
       updateCart();
       let totalPriceCalc=document.querySelector('.price-cart-total');
       let countCartItems=document.querySelector('.count-item-cart');
@@ -317,13 +318,18 @@ function addToWish(product){
 
 
 
-
-
 function  updateWish(){
 
   const wishItem = JSON.parse(localStorage.getItem('wishItem')) ||[];
   let wishItems=document.getElementById('wish-items');
+  
 
+  let wishlistCounter=document.querySelector('.count-item-wishlist');
+  let countFavourite=document.querySelector('.count-favourite');
+  let wishlistLength=wishItem.length;
+  wishlistCounter.innerHTML=wishlistLength
+  countFavourite.innerHTML=wishItem.length
+  
   wishItems.innerHTML ="";
 
   wishItem.forEach((item,index)=>{
@@ -337,11 +343,42 @@ function  updateWish(){
                             <button class="addWishItemToCart" data-index=${item.index}> add to cart</button>
                         </div>
                     </div> 
-                    <button class="delete-item" data-index=${index} ><i class="fa-solid fa-close"></i></button>
+                    <button class="delete-item" data-index=${index}><i class="fa-solid fa-close"></i></button>
                 </div>
     `
   })
   
+
+
+
+ 
+  let removeWishItem=document.querySelectorAll('.delete-item');
+  removeWishItem.forEach((rmvbtn)=>{    
+      rmvbtn.addEventListener('click',(event)=>{
+        let rmvElemnt=event.currentTarget.getAttribute('data-index');
+        RemoveWishItem(rmvElemnt);
+      })
+  })
+
+
+
+  function RemoveWishItem(index){
+      const wishItem=JSON.parse(localStorage.getItem('wishItem')) ||[];
+      wishItem.splice(index,1)[0];
+      localStorage.setItem('wishItem',JSON.stringify(wishItem));
+      updateWish()
+  }
+
+
+
+  let removeAllBtn=document.querySelector('.removeAllBtn');
+  removeAllBtn.addEventListener('click',()=>{
+    let wishItem=JSON.parse(localStorage.getItem('wishItem')) ||[];
+    localStorage.removeItem('wishItem');
+    updateWish()
+    // localStorage.setItem('wishItem',JSON.stringify(wishItem));
+  })
+
 
   }  
   updateWish()

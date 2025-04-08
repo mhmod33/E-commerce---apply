@@ -1,4 +1,5 @@
 
+
 fetch("products.json")
   .then((Response) => Response.json())
   .then((data) => {
@@ -222,10 +223,7 @@ fetch("products.json")
   });
 
 // cart
-window.onload(() => {
-  let cart = document.querySelector(".cart");
-  cart.style.marginRight = "-350px";
-});
+
 function showHideCart() {
   let cart = document.querySelector(".cart");
   cart.classList.toggle("actv");
