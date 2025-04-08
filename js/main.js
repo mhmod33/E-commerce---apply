@@ -19,7 +19,7 @@ function categlist() {
   }
   showHideCart();
 
-// *********************************------------------add to cart functions --------------------*********************************
+// ********************************* add to cart functions *********************************
 
 fetch("products.json")
   .then((Response) => Response.json())
@@ -143,10 +143,6 @@ function updateCart() {
                 </div>
                 <button class="delete-item" data-index=${item.index} ><i class="fa-solid fa-trash-can"></i></button>
       </div>`;
-   
-
-     
-
 
     if(cartInCheckoutItem){ 
       cartInCheckoutItem.innerHTML+=`  
@@ -171,9 +167,6 @@ function updateCart() {
         <button class="delete-item" data-index=${item.index}><i class="fa-solid fa-trash-can"></i></button>
 
       </div>`;}
-
-
-           
   })
 let increaseBtn=document.querySelectorAll('.increase-quantity');
 let decreaseBtn=document.querySelectorAll('.decrease-quantity');
@@ -199,7 +192,6 @@ decreaseBtn.forEach(button=>{
 
 
 
-
   ////////////////////////////////////////////////// delete item and remove it from  cart ////////////////////////////////////////////////
   let deleteButton = document.querySelectorAll(".delete-item");
     deleteButton.forEach((button) => {
@@ -214,8 +206,9 @@ decreaseBtn.forEach(button=>{
   function ClearAll(){
       clearAllBtn.addEventListener('click', ()=>{
       localStorage.removeItem('CartItem');
-
       updateCart();
+
+
       let totalPriceCalc=document.querySelector('.price-cart-total');
       let countCartItems=document.querySelector('.count-item-cart');
 
@@ -228,7 +221,6 @@ decreaseBtn.forEach(button=>{
 
 
 }
-
 
 
 
@@ -317,15 +309,14 @@ function addToWish(product){
 
 
 
-
 function  updateWish(){
 
   const wishItem = JSON.parse(localStorage.getItem('wishItem')) ||[];
   let wishItems=document.getElementById('wish-items');
-  
-
   let wishlistCounter=document.querySelector('.count-item-wishlist');
   let countFavourite=document.querySelector('.count-favourite');
+
+  
   let wishlistLength=wishItem.length;
   wishlistCounter.innerHTML=wishlistLength
   countFavourite.innerHTML=wishItem.length
@@ -349,9 +340,6 @@ function  updateWish(){
   })
   
 
-
-
- 
   let removeWishItem=document.querySelectorAll('.delete-item');
   removeWishItem.forEach((rmvbtn)=>{    
       rmvbtn.addEventListener('click',(event)=>{
@@ -376,7 +364,6 @@ function  updateWish(){
     let wishItem=JSON.parse(localStorage.getItem('wishItem')) ||[];
     localStorage.removeItem('wishItem');
     updateWish()
-    // localStorage.setItem('wishItem',JSON.stringify(wishItem));
   })
 
 

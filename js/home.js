@@ -222,11 +222,10 @@ fetch("products.json")
     });
   });
 
-// cart
 
 function showHideCart() {
   let cart = document.querySelector(".cart");
   cart.classList.toggle("actv");
 }
 showHideCart();
-// ---------add to cart
+

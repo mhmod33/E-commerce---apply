@@ -384,15 +384,12 @@ header .bottom-header .nav-links li.active a{
 
 
 /* ----------------- */
-
-
 .product{
     padding: 20px 20px;
     box-shadow: 5px 5px 10px;
     border-radius: 10px;
     position: relative;
 }
-
 .product .sale-present{
     position: absolute;
     top: 10px;
@@ -441,7 +438,6 @@ header .bottom-header .nav-links li.active a{
     align-items: center;
     gap: 12px;
     font-size: 15px;
-    /* font-weight: bold; */
 }
 .product .price p{
     color: var(--color_heading) ;
@@ -450,7 +446,6 @@ header .bottom-header .nav-links li.active a{
 .product .price .old-price{
     text-decoration: line-through;
 }
-
 .product .icons{
     display: flex;
     flex-direction: row;
@@ -472,7 +467,6 @@ header .bottom-header .nav-links li.active a{
     background-color: var(--main_color);
     color: var(--white_color);
 }
-
 .product .icons .btn-add-to-cart{
     display: flex;
     align-items: center;
@@ -493,7 +487,6 @@ header .bottom-header .nav-links li.active a{
     background-color: transparent;
     pointer-events: none;
 }
-
 .slide{
     margin-bottom: 70px;  
 }
@@ -673,7 +666,6 @@ footer .copyrights a:hover{
 
 
 /* start cart */
-
 .cart{
     position: fixed;
     top: 0;
@@ -946,13 +938,9 @@ footer .copyrights a:hover{
 
 
 
-
+/* ____________________________________________________________________ */
 
 /* start of checkout page */
-
-
-/* end of checkout page */
-/* end big screens */
 .checkout{
     margin: 50px 0;
 }
@@ -1138,8 +1126,6 @@ footer .copyrights a:hover{
 .checkout .container input:focus{
     outline-color: #084fb8;
 }
-
-
 .checkout .container .input_info .coupon .coupon-btn{
     width: 100%;
     height: 50px;
@@ -1153,7 +1139,6 @@ footer .copyrights a:hover{
     border-radius: 5px;
     transition: 0.4s;
 }
-
 .checkout .container .input_info .address .inputs {
     padding: 10px 0;
 }
@@ -1164,11 +1149,15 @@ footer .copyrights a:hover{
     padding: 5px 0;
 }
 
+
+/* end of checkout page */
+
+
+/* end big screens */
 /* start customing responsivness */ 
 
 /* medium screens */
     @media (max-width:1100px) {
-        
         body{
             padding-top: 300px;
 
@@ -1246,10 +1235,7 @@ footer .copyrights a:hover{
         footer .container .row{
             width: 40%;
         }
-        
     }
-
-
 
 /* medium-mid screens */
     @media(min-width: 600px) and (max-width: 1050px) {
@@ -1282,8 +1268,6 @@ footer .copyrights a:hover{
             width: 40%;
         }
     }
-
-
 
 /* small screens */
     @media(min-width: 300px) and (max-width: 600px) {
@@ -1324,10 +1308,6 @@ footer .copyrights a:hover{
         .slider .banner2 {
             display: none  ;
         }
-
-
-
-        
         .product .icons .btn-add-to-cart{
             height: 40px;
             font-size: 13px;
@@ -1404,7 +1384,6 @@ footer .copyrights a:hover{
         .copyright{
             font-size: 12px;
         }
-
         .checkout .container{
             display: flex;
             flex-direction: column;
